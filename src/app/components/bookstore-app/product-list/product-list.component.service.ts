@@ -6,6 +6,17 @@ import { Book } from "./model/Book";
 
 export class BookService {
 
-    
+    private urlApi = ' ';
+
+    httpOptions = {
+        Headers: new HttpHeaders({'content-type': 'application/json'})
+    }
+
+    constructor(private http: HttpClient){}
+
+    getBook(){
+
+        return this.http.get(this.urlApi);
+    }
 
 }
